@@ -51,7 +51,13 @@ pybind11_add_module(${PY_EMODLIB} src/main.cpp ${EMODLIB_OBJECTS})
 # include top-level directory to allow full include paths
 target_include_directories(${PY_EMODLIB} PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
+# include boost libraries
+target_include_directories(${PY_EMODLIB} PUBLIC "C:/local/boost_1_77_0")
+
 #target_link_libraries(${PY_EMODLIB} PUBLIC emodlib-malaria)
+
+# link boost libraries??
+# target_link_libraries(${PY_EMODLIB} PUBLIC "C:/local/boost_1_77_0/lib64-msvc-14.1")
 
 target_compile_features(${PY_EMODLIB} PUBLIC cxx_std_14)
 

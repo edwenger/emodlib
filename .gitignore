@@ -104,5 +104,6 @@ pip-log.txt
 .ccls
 .ccls-cache/
 .vscode/
+.vs/
 compile_commands.json
 .dir-locals.el

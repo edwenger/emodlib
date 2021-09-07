@@ -110,7 +110,7 @@ namespace emodlib
             // Recker, M., S. Nee, et al. (2004). "Transient cross-reactive immune responses can orchestrate antigenic variation in malaria." Nature 429(6991): 555-558.
             // In our model, not all antigens are expressed at the same time, but switching occurs.  This just sets the total repertoire
                         
-            auto rng = IntrahostComponent::p_rng;
+            auto& rng = IntrahostComponent::p_rng;
             
             m_MSPtype = rng->uniformZeroToN16(IntrahostComponent::params::falciparumMSPVars);
             m_nonspectype = rng->uniformZeroToN16(IntrahostComponent::params::falciparumNonSpecTypes);
