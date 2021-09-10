@@ -1,0 +1,7 @@
+useDynLib(EmodlibMalaria, .registration = TRUE)
+
+export(IntrahostComponent)
+export(create_intrahost_component)
+
+import(Rcpp)
+importFrom("methods", "new")

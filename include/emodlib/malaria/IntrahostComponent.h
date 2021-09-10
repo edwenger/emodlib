@@ -9,7 +9,7 @@
 #include <list>
 #include <memory>
 
-#include "emodlib/ParamSet.h"
+// #include "emodlib/ParamSet.h"
 #include "emodlib/utils/RANDOM.h"
 
 #include "InfectionMalaria.h"
@@ -35,7 +35,7 @@ namespace emodlib
                 static int falciparumNonSpecTypes;
                 static int falciparumPfEMP1Vars;
                 
-                static void Configure(const ParamSet& pset);
+                static void Configure(/*const ParamSet& pset*/);
             };
             
             
@@ -58,7 +58,6 @@ namespace emodlib
             Susceptibility* susceptibility;
             std::list<Infection*> infections;
 
-            
             IntrahostComponent();
 
         };

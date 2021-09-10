@@ -44,8 +44,9 @@ namespace emodlib
         suids::distributed_generator Infection::infectionSuidGenerator(0, 0);
 
     
-        void Infection::params::Configure(const ParamSet& pset)
+        void Infection::params::Configure(/*const ParamSet& pset*/)
         {
+            /*
             incubation_period = pset["Base_Incubation_Period"].cast<float>();  // TODO: emodlib#6 (gaussian distribution)
             
             antibody_IRBC_killrate = pset["Antibody_IRBC_Kill_Rate"].cast<float>();
@@ -59,6 +60,7 @@ namespace emodlib
             merozoites_per_schizont = pset["Merozoites_Per_Schizont"].cast<float>();
             RBC_destruction_multiplier = pset["RBC_Destruction_Multiplier"].cast<float>();
             n_asexual_cycles_wo_gametocytes = pset["Number_Of_Asexual_Cycles_Without_Gametocytes"].cast<int>();
+            */
         }
     
     

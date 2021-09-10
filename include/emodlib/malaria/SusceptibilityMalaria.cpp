@@ -48,10 +48,11 @@ namespace emodlib
         float  Susceptibility::params::erythropoiesis_anemia_effect      = 3.5f;
 
     
-        void Susceptibility::params::Configure(const ParamSet& pset)
+        void Susceptibility::params::Configure(/*const ParamSet& pset*/)
         {
-            memory_level = pset["Antibody_Memory_Level"].cast<float>();
+            //memory_level = pset["Antibody_Memory_Level"].cast<float>();
             hyperimmune_decay_rate = -log((0.4f - memory_level) / (1.0f - memory_level)) / 120.0f;  // This sets the decay rate towards memory level so that the decay from antibody levels of 1 to levels of 0.4 is consistent
+            /*
             MSP1_antibody_growthrate = pset["Max_MSP1_Antibody_Growthrate"].cast<float>();
             antibody_stimulation_c50 = pset["Antibody_Stimulation_C50"].cast<float>();
             antibody_capacity_growthrate = pset["Antibody_Capacity_Growth_Rate"].cast<float>();
@@ -69,6 +70,7 @@ namespace emodlib
             // cytokine_gametocyte_inactivation = pset["Cytokine_Gametocyte_Inactivation"].cast<float>();
 
             erythropoiesis_anemia_effect = pset["Erythropoiesis_Anemia_Effect"].cast<float>();
+            */
         }
     
     

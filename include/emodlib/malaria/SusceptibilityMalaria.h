@@ -6,7 +6,10 @@
 
 #pragma once
 
-#include "emodlib/ParamSet.h"
+// [[Rcpp::plugins(cpp14)]]
+#include <vector>
+
+//#include "emodlib/ParamSet.h"
 
 #include "MalariaEnums.h"
 #include "IMalariaAntibody.h"
@@ -54,7 +57,7 @@ namespace emodlib
                 // ... red blood cell effects
                 static float erythropoiesis_anemia_effect;
                 
-                static void Configure(const ParamSet& pset);
+                static void Configure(/*const ParamSet& pset*/);
             };
             
             

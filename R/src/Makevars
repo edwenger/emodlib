@@ -1,0 +1,4 @@
+PKG_CXXFLAGS=-I../../include
+CXX_STD=CXX14
+SOURCES=$(wildcard ../../include/emodlib/utils/*.cpp ../../include/emodlib/malaria/*.cpp)
+OBJECTS=$(SOURCES:.cpp=.o) 

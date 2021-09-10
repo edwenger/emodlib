@@ -23,8 +23,9 @@ namespace emodlib
         std::shared_ptr<RANDOMBASE> IntrahostComponent::p_rng = nullptr;
 
     
-        void IntrahostComponent::params::Configure(const ParamSet& pset)
+        void IntrahostComponent::params::Configure(/*const ParamSet& pset*/)
         {
+            /*
             randomSeed = pset["Run_Number"].cast<int>();
             IntrahostComponent::p_rng = std::shared_ptr<RANDOMBASE>(new PSEUDO_DES(randomSeed, 256));
             
@@ -34,6 +35,7 @@ namespace emodlib
 
             Infection::params::Configure(pset["infection_params"]);
             Susceptibility::params::Configure(pset["susceptibility_params"]);
+            */
         }
     
     

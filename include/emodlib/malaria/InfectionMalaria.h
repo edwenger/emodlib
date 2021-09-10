@@ -6,7 +6,10 @@
 
 #pragma once
 
-#include "emodlib/ParamSet.h"
+// [[Rcpp::plugins(cpp14)]]
+#include <vector>
+
+//#include "emodlib/ParamSet.h"
 #include "emodlib/utils/suids.hpp"
 
 #include "Malaria.h"
@@ -46,7 +49,7 @@ namespace emodlib
                 static float RBC_destruction_multiplier;
                 static int   n_asexual_cycles_wo_gametocytes;
                 
-                static void Configure(const ParamSet& pset);
+                static void Configure(/*const ParamSet& pset*/);
             };
             
             
