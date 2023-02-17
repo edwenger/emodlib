@@ -1,42 +1,54 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(emodlib)
+# set(CMAKE_MODULE_PATH
+#     ${CMAKE_SOURCE_DIR}/cmake
+#     ${CMAKE_MODULE_PATH})
 
-set(EMODLIB_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
+# project(${SKBUILD_PROJECT_NAME} VERSION ${SKBUILD_PROJECT_VERSION})
 
-OPTION(BUILD_TESTS "build emodlib test suite" OFF)
-OPTION(BUILD_BENCHMARK "build emodlib benchmark suite" OFF)
-OPTION(BUILD_PYTHON_MODULE "build emodlib Python bindings" OFF)
+find_package(pybind11 CONFIG REQUIRED)
 
-set(CMAKE_MODULE_PATH
-    ${CMAKE_SOURCE_DIR}/cmake
-    ${CMAKE_MODULE_PATH})
+# message(STATUS "Found pybind11 v${pybind11_VERSION}: ${pybind11_INCLUDE_DIRS}")
 
-# Versioning
-# ==========
+# Installation directory
+# ======================
 
-include(VersionUtils)
-set_version_str("${EMODLIB_INCLUDE_DIR}")
-message(STATUS "Building emodlib v${VERSION_STR}")
+# -- Set the Python site-package installation directory
+find_package(PythonInterp)
+execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "from distutils.sysconfig import get_python_lib; import os;print(get_python_lib())"
+                OUTPUT_VARIABLE PY_SP_DIR OUTPUT_STRIP_TRAILING_WHITESPACE)
 
-# Configure/Build
-# ===============
+set(SP_DIR "${PY_SP_DIR}" CACHE PATH "Site-package directory")
+message("-- CMake install prefix: " ${CMAKE_INSTALL_PREFIX})
+message("  -> site-packages: " ${SP_DIR})
+
+# Build
+# =====
+
+set(PY_EMODLIB _emodlib_py)
 
 # -- emodlib
+set(EMODLIB_OBJECTS
+  ${CMAKE_SOURCE_DIR}/include/emodlib/malaria/InfectionMalaria.cpp
+  ${CMAKE_SOURCE_DIR}/include/emodlib/malaria/SusceptibilityMalaria.cpp
+  ${CMAKE_SOURCE_DIR}/include/emodlib/malaria/IntrahostComponent.cpp
+  ${CMAKE_SOURCE_DIR}/include/emodlib/malaria/MalariaAntibody.cpp
+  ${CMAKE_SOURCE_DIR}/include/emodlib/utils/RANDOM.cpp
+  ${CMAKE_SOURCE_DIR}/include/emodlib/utils/suids
+)
 
-add_subdirectory(include/emodlib)
+pybind11_add_module(${PY_EMODLIB} src/main.cpp ${EMODLIB_OBJECTS})
 
-# -- optional subdirectories
+# include top-level directory to allow full include paths
+target_include_directories(${PY_EMODLIB} PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
-if(BUILD_TESTS)
-  enable_testing()
-  add_subdirectory(test)
-endif()
+#target_link_libraries(${PY_EMODLIB} PUBLIC emodlib-malaria)
 
-if(BUILD_BENCHMARK)
-  add_subdirectory(benchmark)
-endif()
+target_compile_features(${PY_EMODLIB} PUBLIC cxx_std_14)
 
-if(BUILD_PYTHON_MODULE)
-  add_subdirectory(python)
-endif()
+# target_compile_definitions(${PY_EMODLIB} PRIVATE VERSION_INFO=${PROJECT_VERSION})
+
+# Installation
+# ============
+
+install(TARGETS ${PY_EMODLIB} DESTINATION ${SP_DIR})
