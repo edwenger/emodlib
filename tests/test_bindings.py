@@ -1,6 +1,8 @@
+import os
+
 import yaml
 
-from emodlib.malaria import *
+from emodlib.malaria import IntrahostComponent
 
 
 def describe(c, t=None):
@@ -10,49 +12,18 @@ def describe(c, t=None):
     print(s)
 
 
-params = dict(
-    Run_Number=12345,
+def params_from_test_file():
+
+    with open(os.path.join(os.path.realpath(os.path.dirname(__file__)), 'config.yaml')) as cfg:
+        params = yaml.load(cfg, Loader=yaml.FullLoader)
+
+    return params
+
+
+def test_bindings():
     
-    Max_Individual_Infections=5,
-
-    Falciparum_MSP_Variants=32,
-    Falciparum_Nonspecific_Types=76,
-    Falciparum_PfEMP1_Variants=1070,
-    
-    infection_params=dict(
-        Base_Incubation_Period=7,
-        Antibody_IRBC_Kill_Rate=1.596,
-        Nonspecific_Antigenicity_Factor=0.415111634,
-        MSP1_Merozoite_Kill_Fraction=0.511735322,
-        Gametocyte_Stage_Survival_Rate=0.588569307,
-        Base_Gametocyte_Fraction_Male=0.2,
-        Base_Gametocyte_Production_Rate=0.06150582,
-        Antigen_Switch_Rate=pow(10, -9.116590124),
-        Merozoites_Per_Hepatocyte=15000,
-        Merozoites_Per_Schizont=16,
-        RBC_Destruction_Multiplier=3.29,
-        Number_Of_Asexual_Cycles_Without_Gametocytes=1
-    ),
-    
-    susceptibility_params=dict(
-        Antibody_Memory_Level=0.34,
-        Max_MSP1_Antibody_Growthrate=0.045,
-        Antibody_Stimulation_C50=30,
-        Antibody_Capacity_Growth_Rate=0.09,
-        Min_Adapted_Response=0.05,
-        Nonspecific_Antibody_Growth_Rate_Factor=0.5,
-        Antibody_CSP_Decay_Days=90,
-        Maternal_Antibody_Decay_Rate=0.01,
-        Pyrogenic_Threshold=1.5e4,
-        Fever_IRBC_Kill_Rate=1.4,
-        Erythropoiesis_Anemia_Effect=3.5
-    )
-)
-
-
-if __name__ == '__main__':
-
     print('Model parameters...\n')
+    params = params_from_test_file()
     print(yaml.dump(params))
 
     print('Configure...')
@@ -69,6 +40,17 @@ if __name__ == '__main__':
         ic.update(dt=1)
         describe(ic, t)
 
+    assert ic.parasite_density > 0
+    assert ic.gametocyte_density > 0
+
     print('Treat...')
     ic.treat()
     describe(ic)
+
+    assert ic.parasite_density == 0
+    assert ic.gametocyte_density == 0
+
+
+if __name__ == '__main__':
+
+    test_bindings()
