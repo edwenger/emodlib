@@ -1,10 +1,9 @@
-from test_bindings import params_from_test_file
+from test_host import params_from_test_file
 
-from emodlib.malaria import IntrahostComponent, Susceptibility, Infection
+from emodlib.malaria import Infection, IntrahostComponent, Susceptibility
 
 
 def test_infection():
-    
     params = params_from_test_file()
     IntrahostComponent.configure(params)  # required for Infection::Initialize params?
 
