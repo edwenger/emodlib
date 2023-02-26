@@ -64,6 +64,8 @@ namespace emodlib
             float get_mature_gametocyte_density() const;
             bool IsCleared() const;
 
+            int32_t get_msp_type() const;
+            std::vector<int32_t> get_pfemp1_major_types() const;
 
         private:
 

@@ -56,6 +56,7 @@ namespace emodlib
             float GetGametocyteDensity() const;
             float GetFeverTemperature() const;
 
+            Susceptibility* GetSusceptibility() const;
 
         private:
 
