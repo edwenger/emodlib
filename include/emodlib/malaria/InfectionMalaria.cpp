@@ -572,6 +572,12 @@ namespace emodlib
             return vi;
         }
 
+        IMalariaAntibody* Infection::get_msp_antibody() const
+        {
+            return m_MSP_antibody;
+        }
+
+
     }
 
 }

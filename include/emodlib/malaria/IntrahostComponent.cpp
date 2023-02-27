@@ -126,6 +126,11 @@ namespace emodlib
             return susceptibility;
         }
 
+        std::list<Infection*> IntrahostComponent::GetInfections() const
+        {
+            return infections;
+        }
+
     }
 
 }

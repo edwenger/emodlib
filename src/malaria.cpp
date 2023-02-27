@@ -7,9 +7,42 @@
 #include "pybind11/stl.h"
 
 #include "emodlib/malaria/IntrahostComponent.h"
+#include "emodlib/malaria/MalariaAntibody.h"
 
 namespace py = pybind11;
 namespace emm = emodlib::malaria;
+
+
+// Following template trampoline pattern for combining virtual functions + inheritance:
+// https://pybind11.readthedocs.io/en/stable/advanced/classes.html#combining-virtual-functions-and-inheritance
+
+template <class IAntibodyBase = emm::IMalariaAntibody>
+class PyIMalariaAntibody : public IAntibodyBase {
+public:
+     using IAntibodyBase::IAntibodyBase; // Inherit constructors
+     void IncreaseAntigenCount(int64_t antigenCount) override {
+          PYBIND11_OVERRIDE_PURE(void, IAntibodyBase, IncreaseAntigenCount, antigenCount); }
+     int64_t GetAntigenCount() const override {
+          PYBIND11_OVERRIDE_PURE(int64_t, IAntibodyBase, GetAntigenCount, ); }
+     float GetAntibodyCapacity() const override {
+          PYBIND11_OVERRIDE_PURE(float, IAntibodyBase, GetAntibodyCapacity, ); }
+     float GetAntibodyConcentration() const override {
+          PYBIND11_OVERRIDE_PURE(float, IAntibodyBase, GetAntibodyConcentration, ); }
+};
+
+template <class MalariaAntibodyBase = emm::MalariaAntibody>
+class PyMalariaAntibody : public PyIMalariaAntibody<MalariaAntibodyBase> {
+public:
+     using PyIMalariaAntibody<MalariaAntibodyBase>::PyIMalariaAntibody; // Inherit constructors
+     void IncreaseAntigenCount(int64_t antigenCount) override {
+          PYBIND11_OVERRIDE(void, MalariaAntibodyBase, IncreaseAntigenCount, antigenCount); }
+     int64_t GetAntigenCount() const override {
+          PYBIND11_OVERRIDE(int64_t, MalariaAntibodyBase, GetAntigenCount, ); }
+     float GetAntibodyCapacity() const override {
+          PYBIND11_OVERRIDE(float, MalariaAntibodyBase, GetAntibodyCapacity, ); }
+     float GetAntibodyConcentration() const override {
+          PYBIND11_OVERRIDE(float, MalariaAntibodyBase, GetAntibodyConcentration, ); }
+};
 
 
 void add_malaria_bindings(py::module& m) {
@@ -47,12 +80,15 @@ void add_malaria_bindings(py::module& m) {
         .def_property_readonly("gametocyte_density", &IntrahostComponent::GetGametocyteDensity)
         .def_property_readonly("fever_temperature", &IntrahostComponent::GetFeverTemperature)
 
-        .def_property_readonly("susceptibility", &IntrahostComponent::GetSusceptibility);
+        .def_property_readonly("susceptibility", &IntrahostComponent::GetSusceptibility)
+        .def_property_readonly("infections", &IntrahostComponent::GetInfections);
+
 
     // TODO: emodlib#9 (readwrite for init) + emodlib#11 (readonly for testing)
     // py::class_<Infection>
     // py::class_<Susceptibility>
     // py::class_<IMalariaAntibody>
+
 
     py::class_<Susceptibility> (m, "Susceptibility")
 
@@ -101,5 +137,19 @@ void add_malaria_bindings(py::module& m) {
 
           .def_property_readonly("msp_type", &Infection::get_msp_type)
 
-          .def_property_readonly("pfemp1_major_types", &Infection::get_pfemp1_major_types);
+          .def_property_readonly("pfemp1_major_types", &Infection::get_pfemp1_major_types)
+
+          .def_property_readonly("msp_antibody", &Infection::get_msp_antibody);
+
+
+     py::class_<IMalariaAntibody, PyIMalariaAntibody<>> (m, "IMalariaAntibody");
+
+     py::class_<MalariaAntibody, IMalariaAntibody, PyMalariaAntibody<>> (m, "MalariaAntibody")
+          .def_property_readonly("antigen_count", &MalariaAntibody::GetAntigenCount)
+          .def_property_readonly("antibody_capacity", &MalariaAntibody::GetAntibodyCapacity)
+          .def_property_readonly("antibody_concentration", &MalariaAntibody::GetAntibodyConcentration);
+
+
+     py::class_<MalariaAntibodyMSP, MalariaAntibody, PyMalariaAntibody<MalariaAntibodyMSP>> (m, "MalariaAntibodyMSP");
+
 }

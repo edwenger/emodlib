@@ -67,6 +67,8 @@ namespace emodlib
             int32_t get_msp_type() const;
             std::vector<int32_t> get_pfemp1_major_types() const;
 
+            IMalariaAntibody* get_msp_antibody() const;
+
         private:
 
             suids::suid suid; // unique id of this infection within the system

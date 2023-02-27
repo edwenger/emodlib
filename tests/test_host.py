@@ -1,5 +1,6 @@
 import os
 
+import pytest
 import yaml
 
 from emodlib.malaria import IntrahostComponent
@@ -8,9 +9,7 @@ from emodlib.malaria import IntrahostComponent
 def describe(c, t=None):
     s = "t=%d: " % t if t is not None else ""
     s += "(asexual, mature gametocyte, fever) = ({:0.2f}, {:0.3f}, {:0.1f})".format(
-        c.parasite_density,
-        c.gametocyte_density,
-        c.fever_temperature,
+        c.parasite_density, c.gametocyte_density, c.fever_temperature
     )
     print(s)
 
@@ -27,7 +26,6 @@ def params_from_test_file():
 def test_bindings():
     print("Model parameters...\n")
     params = params_from_test_file()
-    print(yaml.dump(params))
 
     print("Configure...")
     IntrahostComponent.configure(params)
@@ -39,12 +37,21 @@ def test_bindings():
     ic.challenge()
 
     print("Update...")
-    for t in range(30):
+    for t in range(35):
         ic.update(dt=1)
         describe(ic, t)
 
+        msp = ic.infections[0].msp_antibody
+        print(
+            "\tanti-MSP (capacity, concentration): %0.2f, %0.2f"
+            % (msp.antibody_capacity, msp.antibody_concentration)
+        )
+
     assert ic.parasite_density > 0
     assert ic.gametocyte_density > 0
+
+    assert ic.infections[0].msp_antibody.antibody_capacity > 0
+    assert ic.infections[0].msp_antibody.antibody_concentration > 0
 
     print("Treat...")
     ic.treat()
@@ -57,7 +64,6 @@ def test_bindings():
 def test_infection_clearance():
     print("Model parameters...\n")
     params = params_from_test_file()
-    print(yaml.dump(params))
 
     print("Configure...")
     IntrahostComponent.configure(params)
@@ -87,7 +93,6 @@ def test_infection_clearance():
 def test_max_infections():
     print("Model parameters...\n")
     params = params_from_test_file()
-    print(yaml.dump(params))
 
     print("Configure...")
     IntrahostComponent.configure(params)
@@ -103,6 +108,4 @@ def test_max_infections():
 
 
 if __name__ == "__main__":
-    test_bindings()
-    test_infection_clearance()
-    test_max_infections()
+    pytest.main(["-vv", "-s", __file__])

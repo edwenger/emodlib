@@ -1,15 +1,28 @@
+import pytest
 from test_host import params_from_test_file
 
 from emodlib.malaria import Infection, IntrahostComponent, Susceptibility
 
 
-def test_infection():
-    params = params_from_test_file()
-    IntrahostComponent.configure(params)  # required for Infection::Initialize params?
+@pytest.fixture
+def params():
+    p = params_from_test_file()
+    IntrahostComponent.configure(p)  # required for Infection::Initialize params?
+    return p
 
-    s = Susceptibility.create()
 
-    infs = [Infection.create(susceptibility=s, hepatocytes=1) for _ in range(10)]
+@pytest.fixture
+def default_susceptibility(params):
+    yield Susceptibility.create()
+
+
+@pytest.fixture
+def default_infection(default_susceptibility):
+    yield Infection.create(susceptibility=default_susceptibility, hepatocytes=1)
+
+
+def test_infection(default_infection, params):
+    infs = [default_infection for _ in range(10)]
 
     msp_types = [i.msp_type for i in infs]
     print(msp_types)
@@ -21,5 +34,13 @@ def test_infection():
     assert all([t < params["Falciparum_PfEMP1_Variants"] for t in major_types])
 
 
+def test_antibody(default_infection):
+    inf = default_infection
+    for _ in range(10):
+        inf.update(dt=1)
+        print("MSP antigen count = %0.2f" % inf.msp_antibody.antigen_count)
+    assert inf.msp_antibody.antigen_count > 0
+
+
 if __name__ == "__main__":
-    test_infection()
+    pytest.main(["-vv", "-s", __file__])

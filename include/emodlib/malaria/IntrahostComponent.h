@@ -57,6 +57,7 @@ namespace emodlib
             float GetFeverTemperature() const;
 
             Susceptibility* GetSusceptibility() const;
+            std::list<Infection*> GetInfections() const;
 
         private:
 

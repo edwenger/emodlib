@@ -62,6 +62,4 @@ def test_immune_init():
 
 
 if __name__ == "__main__":
-    test_aging()
-    test_maternal_antibodies()
-    test_immune_init()
+    pytest.main(["-vv", "-s", __file__])
