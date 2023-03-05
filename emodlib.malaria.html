@@ -48,7 +48,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">emodlib.malaria package</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emodlib.html#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emodlib.html#module-emodlib">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -83,8 +83,170 @@
              
   <section id="emodlib-malaria-package">
 <h1>emodlib.malaria package<a class="headerlink" href="#emodlib-malaria-package" title="Permalink to this heading"></a></h1>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
+<section id="module-emodlib.malaria">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-emodlib.malaria" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="emodlib.malaria.Infection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emodlib.malaria.</span></span><span class="sig-name descname"><span class="pre">Infection</span></span><a class="headerlink" href="#emodlib.malaria.Infection" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.Infection.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#emodlib.malaria.Infection.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.Infection.configure">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#emodlib.malaria.Infection.configure" title="Permalink to this definition"></a></dt>
+<dd><p>Configure the Infection params from a ParamSet dictionary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.Infection.create">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">susceptibility</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#emodlib.malaria.Susceptibility" title="emodlib._emodlib_py.malaria.Susceptibility"><span class="pre">emodlib._emodlib_py.malaria.Susceptibility</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">hepatocytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#emodlib.malaria.Infection" title="emodlib._emodlib_py.malaria.Infection"><span class="pre">emodlib._emodlib_py.malaria.Infection</span></a></span></span><a class="headerlink" href="#emodlib.malaria.Infection.create" title="Permalink to this definition"></a></dt>
+<dd><p>Create an Infection object with pointer to Susceptibility</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.Infection.msp_antibody">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">msp_antibody</span></span><a class="headerlink" href="#emodlib.malaria.Infection.msp_antibody" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.Infection.msp_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">msp_type</span></span><a class="headerlink" href="#emodlib.malaria.Infection.msp_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.Infection.pfemp1_major_types">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pfemp1_major_types</span></span><a class="headerlink" href="#emodlib.malaria.Infection.pfemp1_major_types" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.Infection.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#emodlib.malaria.Infection" title="emodlib._emodlib_py.malaria.Infection"><span class="pre">emodlib._emodlib_py.malaria.Infection</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#emodlib.malaria.Infection.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update the infection state by dt</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emodlib.malaria.</span></span><span class="sig-name descname"><span class="pre">IntrahostComponent</span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.challenge">
+<span class="sig-name descname"><span class="pre">challenge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#emodlib.malaria.IntrahostComponent" title="emodlib._emodlib_py.malaria.IntrahostComponent"><span class="pre">emodlib._emodlib_py.malaria.IntrahostComponent</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.challenge" title="Permalink to this definition"></a></dt>
+<dd><p>Challenge with a new infection</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.configure">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.configure" title="Permalink to this definition"></a></dt>
+<dd><p>Configure the IntrahostComponent params from a ParamSet dictionary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.create">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#emodlib.malaria.IntrahostComponent" title="emodlib._emodlib_py.malaria.IntrahostComponent"><span class="pre">emodlib._emodlib_py.malaria.IntrahostComponent</span></a></span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.fever_temperature">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fever_temperature</span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.fever_temperature" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.gametocyte_density">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gametocyte_density</span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.gametocyte_density" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.infections">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">infections</span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.infections" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.n_infections">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_infections</span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.n_infections" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.parasite_density">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parasite_density</span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.parasite_density" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.susceptibility">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">susceptibility</span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.susceptibility" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.treat">
+<span class="sig-name descname"><span class="pre">treat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#emodlib.malaria.IntrahostComponent" title="emodlib._emodlib_py.malaria.IntrahostComponent"><span class="pre">emodlib._emodlib_py.malaria.IntrahostComponent</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.treat" title="Permalink to this definition"></a></dt>
+<dd><p>Treat and clear all infections</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#emodlib.malaria.IntrahostComponent" title="emodlib._emodlib_py.malaria.IntrahostComponent"><span class="pre">emodlib._emodlib_py.malaria.IntrahostComponent</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update the intrahost model state by dt</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="emodlib.malaria.Susceptibility">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emodlib.malaria.</span></span><span class="sig-name descname"><span class="pre">Susceptibility</span></span><a class="headerlink" href="#emodlib.malaria.Susceptibility" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.Susceptibility.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#emodlib.malaria.Susceptibility.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.Susceptibility.age">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">age</span></span><a class="headerlink" href="#emodlib.malaria.Susceptibility.age" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.Susceptibility.configure">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#emodlib.malaria.Susceptibility.configure" title="Permalink to this definition"></a></dt>
+<dd><p>Configure the Susceptibility params from a ParamSet dictionary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.Susceptibility.create">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#emodlib.malaria.Susceptibility" title="emodlib._emodlib_py.malaria.Susceptibility"><span class="pre">emodlib._emodlib_py.malaria.Susceptibility</span></a></span></span><a class="headerlink" href="#emodlib.malaria.Susceptibility.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.Susceptibility.fever_kill_rate">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fever_kill_rate</span></span><a class="headerlink" href="#emodlib.malaria.Susceptibility.fever_kill_rate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.Susceptibility.maternal_antibody_strength">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maternal_antibody_strength</span></span><a class="headerlink" href="#emodlib.malaria.Susceptibility.maternal_antibody_strength" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.Susceptibility.pyrogenic_threshold">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pyrogenic_threshold</span></span><a class="headerlink" href="#emodlib.malaria.Susceptibility.pyrogenic_threshold" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.Susceptibility.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#emodlib.malaria.Susceptibility" title="emodlib._emodlib_py.malaria.Susceptibility"><span class="pre">emodlib._emodlib_py.malaria.Susceptibility</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#emodlib.malaria.Susceptibility.update" title="Permalink to this definition"></a></dt>
+<dd><p>Update the susceptibility state by dt</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
