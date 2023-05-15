@@ -51,5 +51,5 @@
 #define DEFAULT_FEVER_IRBC_KILL_RATE    (0.15f)
 
 // TODO: emodlib#7 (infectiousness calculations)
-// #define DEFAULT_BASE_GAMETOCYTE_MOSQUITO_SURVIVAL   (0.01f) // For initialization of flags only-- See Eckhoff Intrahost paper for details of parameter
-// #define DEFAULT_CYTOKINE_GAMETOCYTE_INACTIVATION    (0.02f) // For initialization of flags only-- See Eckhoff Intrahost paper for details of parameter
+#define DEFAULT_BASE_GAMETOCYTE_MOSQUITO_SURVIVAL   (0.01f)
+#define DEFAULT_CYTOKINE_GAMETOCYTE_INACTIVATION    (0.02f)

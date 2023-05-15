@@ -48,8 +48,8 @@ namespace emodlib
                 static float fever_IRBC_killrate;
 
                 // ... infectiousness calculations
-                // static float base_gametocyte_mosquito_survival;  // TODO: emodlib#7 (infectiousness calculations)
-                // static float cytokine_gametocyte_inactivation;
+                static float base_gametocyte_mosquito_survival;  // TODO: emodlib#7 (infectiousness calculations)
+                static float cytokine_gametocyte_inactivation;
 
                 // ... red blood cell effects
                 static float erythropoiesis_anemia_effect;
