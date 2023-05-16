@@ -53,3 +53,5 @@
 // TODO: emodlib#7 (infectiousness calculations)
 #define DEFAULT_BASE_GAMETOCYTE_MOSQUITO_SURVIVAL   (0.01f)
 #define DEFAULT_CYTOKINE_GAMETOCYTE_INACTIVATION    (0.02f)
+
+#define MICROLITERS_PER_BLOODMEAL (2.0)  // from Vector.h
