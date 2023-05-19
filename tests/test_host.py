@@ -14,13 +14,14 @@ def describe(c, t=None):
     print(s)
 
 
-def params_from_test_file():
+def params_from_default_file():
     with open(
         os.path.join(
             os.path.realpath(os.path.dirname(__file__)),
             "..",
-            "docs",
-            "tutorials",
+            "src",
+            "emodlib",
+            "malaria",
             "config.yml",
         )
     ) as cfg:
@@ -29,12 +30,32 @@ def params_from_test_file():
     return params
 
 
-def test_bindings():
+def test_config():
     print("Model parameters...\n")
-    params = params_from_test_file()
+    params = params_from_default_file()
+
+    assert IntrahostComponent.params["Run_Number"] == params["Run_Number"]
+
+    run_number = 123456
+    params["Run_Number"] = run_number
 
     print("Configure...")
-    IntrahostComponent.configure(params)
+    IntrahostComponent.configure(
+        dict(Run_Number=run_number, infection_params=dict(Merozoites_Per_Schizont=10))
+    )
+    assert IntrahostComponent.params["Run_Number"] == run_number
+    assert (
+        IntrahostComponent.params["infection_params"]["Merozoites_Per_Schizont"] == 10
+    )
+    assert (
+        IntrahostComponent.params["susceptibility_params"]["Antibody_CSP_Decay_Days"]
+        == params["susceptibility_params"]["Antibody_CSP_Decay_Days"]
+    )
+
+
+def test_bindings():
+    print("Configure...")
+    IntrahostComponent.configure(params_from_default_file())
 
     print("Create...")
     ic = IntrahostComponent.create()
@@ -70,7 +91,7 @@ def test_bindings():
 
 def test_infection_clearance():
     print("Model parameters...\n")
-    params = params_from_test_file()
+    params = params_from_default_file()
 
     print("Configure...")
     IntrahostComponent.configure(params)
@@ -99,7 +120,7 @@ def test_infection_clearance():
 
 def test_max_infections():
     print("Model parameters...\n")
-    params = params_from_test_file()
+    params = params_from_default_file()
 
     print("Configure...")
     IntrahostComponent.configure(params)
