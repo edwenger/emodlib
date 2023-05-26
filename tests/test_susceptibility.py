@@ -1,5 +1,4 @@
 import pytest
-from test_host import params_from_default_file
 
 from emodlib.malaria import IntrahostComponent, Susceptibility
 
@@ -32,8 +31,8 @@ def test_maternal_antibodies():
 
 
 def test_immune_init():
-    params = params_from_default_file()
-    IntrahostComponent.configure(params)
+    print("Set default parameters...")
+    IntrahostComponent.set_params()
 
     ic = IntrahostComponent.create()
     s = ic.susceptibility

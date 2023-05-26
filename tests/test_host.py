@@ -31,7 +31,7 @@ def params_from_default_file():
 
 
 def test_config():
-    print("Model parameters...\n")
+    print("Load default model parameters...\n")
     params = params_from_default_file()
 
     assert IntrahostComponent.params["Run_Number"] == params["Run_Number"]
@@ -39,8 +39,8 @@ def test_config():
     run_number = 123456
     params["Run_Number"] = run_number
 
-    print("Configure...")
-    IntrahostComponent.configure(
+    print("Update nested parameters...")
+    IntrahostComponent.update_params(
         dict(Run_Number=run_number, infection_params=dict(Merozoites_Per_Schizont=10))
     )
     assert IntrahostComponent.params["Run_Number"] == run_number
@@ -54,8 +54,8 @@ def test_config():
 
 
 def test_bindings():
-    print("Configure...")
-    IntrahostComponent.configure(params_from_default_file())
+    print("Set default parameters...")
+    IntrahostComponent.set_params()
 
     print("Create...")
     ic = IntrahostComponent.create()
@@ -90,11 +90,8 @@ def test_bindings():
 
 
 def test_infection_clearance():
-    print("Model parameters...\n")
-    params = params_from_default_file()
-
-    print("Configure...")
-    IntrahostComponent.configure(params)
+    print("Set default parameters...")
+    IntrahostComponent.set_params()
 
     print("Create...")
     ic = IntrahostComponent.create()
@@ -119,11 +116,11 @@ def test_infection_clearance():
 
 
 def test_max_infections():
-    print("Model parameters...\n")
+    print("Load default model parameters...\n")
     params = params_from_default_file()
 
-    print("Configure...")
-    IntrahostComponent.configure(params)
+    print("Set default parameters...")
+    IntrahostComponent.set_params()
 
     print("Create...")
     ic = IntrahostComponent.create()

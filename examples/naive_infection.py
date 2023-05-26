@@ -33,7 +33,7 @@ def run_challenge(duration):
 
 
 if __name__ == "__main__":
-    IntrahostComponent.configure()  # default params
+    IntrahostComponent.set_params()  # default params
 
     df = run_challenge(duration=300)
     print(df.head(10))
