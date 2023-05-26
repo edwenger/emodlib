@@ -4,7 +4,6 @@ import yaml
 
 
 class Params(dict):
-
     @classmethod
     def from_yaml(cls, path):
         with open(path) as cfg:
@@ -14,11 +13,13 @@ class Params(dict):
     @property
     def yaml(self):
         return yaml.dump(self)
-    
+
 
 yaml.add_representer(
     Params,
-    lambda dumper, data: dumper.represent_mapping('tag:yaml.org,2002:map', data.items())
+    lambda dumper, data: dumper.represent_mapping(
+        "tag:yaml.org,2002:map", data.items()
+    ),
 )
 
 
@@ -44,7 +45,7 @@ def deep_update(
 
 @classmethod
 def update_params(cls, params={}):
-    """ Nested update on top of current parameters """
+    """Nested update on top of current parameters"""
     cfg = deep_update(cls.params, params)
     cls.params = cfg
     cls._configure_from_params(cfg)  # setting static variables in bound C++ classes
@@ -52,8 +53,7 @@ def update_params(cls, params={}):
 
 @classmethod
 def set_params(cls, params={}):
-    """ Nested update on top of default parameters """
+    """Nested update on top of default parameters"""
     cfg = deep_update(cls.default_params, params)
     cls.params = cfg
     cls._configure_from_params(cfg)  # setting static variables in bound C++ classes
-
