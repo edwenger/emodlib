@@ -5,3 +5,4 @@
 
     tutorials/tut_intro.ipynb
     tutorials/tut_challenge.ipynb
+    tutorials/tut_multihost.ipynb

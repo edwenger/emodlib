@@ -25,7 +25,7 @@ classifiers = [
 dependencies = ["pyyaml"]
 
 [project.optional-dependencies]
-test = ["pytest", "matplotlib", "numpy", "pandas"]
+test = ["pytest", "matplotlib", "numpy", "pandas", "xarray"]
 dev = ["nox", "pytest"]
 
 
