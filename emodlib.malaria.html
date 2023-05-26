@@ -4,20 +4,23 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>emodlib.malaria package &mdash; emodlib v0.0.2 documentation</title>
+  <title>emodlib.malaria package &mdash; emodlib 0.0.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorials" href="tutorials.html" />
     <link rel="prev" title="emodlib package" href="emodlib.html" /> 
 </head>
 
@@ -32,6 +35,9 @@
           <a href="index.html" class="icon icon-home">
             emodlib
           </a>
+              <div class="version">
+                0.0.2
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -53,6 +59,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 </ul>
 
         </div>
@@ -145,14 +152,13 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.configure">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.configure" title="Permalink to this definition"></a></dt>
-<dd><p>Configure the IntrahostComponent params from a ParamSet dictionary</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.create">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#emodlib.malaria.IntrahostComponent" title="emodlib._emodlib_py.malaria.IntrahostComponent"><span class="pre">emodlib._emodlib_py.malaria.IntrahostComponent</span></a></span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.default_params">
+<span class="sig-name descname"><span class="pre">default_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Base_Gametocyte_Mosquito_Survival_Rate':</span> <span class="pre">0.002011099,</span> <span class="pre">'Cytokine_Gametocyte_Inactivation':</span> <span class="pre">0.01667,</span> <span class="pre">'Falciparum_MSP_Variants':</span> <span class="pre">32,</span> <span class="pre">'Falciparum_Nonspecific_Types':</span> <span class="pre">76,</span> <span class="pre">'Falciparum_PfEMP1_Variants':</span> <span class="pre">1070,</span> <span class="pre">'Max_Individual_Infections':</span> <span class="pre">5,</span> <span class="pre">'Run_Number':</span> <span class="pre">12345,</span> <span class="pre">'infection_params':</span> <span class="pre">{'Antibody_IRBC_Kill_Rate':</span> <span class="pre">1.596,</span> <span class="pre">'Antigen_Switch_Rate':</span> <span class="pre">7.645570124964182e-10,</span> <span class="pre">'Base_Gametocyte_Fraction_Male':</span> <span class="pre">0.2,</span> <span class="pre">'Base_Gametocyte_Production_Rate':</span> <span class="pre">0.06150582,</span> <span class="pre">'Base_Incubation_Period':</span> <span class="pre">7,</span> <span class="pre">'Gametocyte_Stage_Survival_Rate':</span> <span class="pre">0.588569307,</span> <span class="pre">'MSP1_Merozoite_Kill_Fraction':</span> <span class="pre">0.511735322,</span> <span class="pre">'Merozoites_Per_Hepatocyte':</span> <span class="pre">15000,</span> <span class="pre">'Merozoites_Per_Schizont':</span> <span class="pre">16,</span> <span class="pre">'Nonspecific_Antigenicity_Factor':</span> <span class="pre">0.415111634,</span> <span class="pre">'Number_Of_Asexual_Cycles_Without_Gametocytes':</span> <span class="pre">1,</span> <span class="pre">'RBC_Destruction_Multiplier':</span> <span class="pre">3.29},</span> <span class="pre">'susceptibility_params':</span> <span class="pre">{'Antibody_CSP_Decay_Days':</span> <span class="pre">90,</span> <span class="pre">'Antibody_Capacity_Growth_Rate':</span> <span class="pre">0.09,</span> <span class="pre">'Antibody_Memory_Level':</span> <span class="pre">0.34,</span> <span class="pre">'Antibody_Stimulation_C50':</span> <span class="pre">30,</span> <span class="pre">'Erythropoiesis_Anemia_Effect':</span> <span class="pre">3.5,</span> <span class="pre">'Fever_IRBC_Kill_Rate':</span> <span class="pre">1.4,</span> <span class="pre">'Maternal_Antibody_Decay_Rate':</span> <span class="pre">0.01,</span> <span class="pre">'Max_MSP1_Antibody_Growthrate':</span> <span class="pre">0.045,</span> <span class="pre">'Min_Adapted_Response':</span> <span class="pre">0.05,</span> <span class="pre">'Nonspecific_Antibody_Growth_Rate_Factor':</span> <span class="pre">0.5,</span> <span class="pre">'Pyrogenic_Threshold':</span> <span class="pre">15000.0}}</span></em><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.default_params" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -171,14 +177,30 @@
 <dd></dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.infectiousness">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">infectiousness</span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.infectiousness" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.n_infections">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_infections</span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.n_infections" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.params">
+<span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Base_Gametocyte_Mosquito_Survival_Rate':</span> <span class="pre">0.002011099,</span> <span class="pre">'Cytokine_Gametocyte_Inactivation':</span> <span class="pre">0.01667,</span> <span class="pre">'Falciparum_MSP_Variants':</span> <span class="pre">32,</span> <span class="pre">'Falciparum_Nonspecific_Types':</span> <span class="pre">76,</span> <span class="pre">'Falciparum_PfEMP1_Variants':</span> <span class="pre">1070,</span> <span class="pre">'Max_Individual_Infections':</span> <span class="pre">5,</span> <span class="pre">'Run_Number':</span> <span class="pre">12345,</span> <span class="pre">'infection_params':</span> <span class="pre">{'Antibody_IRBC_Kill_Rate':</span> <span class="pre">1.596,</span> <span class="pre">'Antigen_Switch_Rate':</span> <span class="pre">7.645570124964182e-10,</span> <span class="pre">'Base_Gametocyte_Fraction_Male':</span> <span class="pre">0.2,</span> <span class="pre">'Base_Gametocyte_Production_Rate':</span> <span class="pre">0.06150582,</span> <span class="pre">'Base_Incubation_Period':</span> <span class="pre">7,</span> <span class="pre">'Gametocyte_Stage_Survival_Rate':</span> <span class="pre">0.588569307,</span> <span class="pre">'MSP1_Merozoite_Kill_Fraction':</span> <span class="pre">0.511735322,</span> <span class="pre">'Merozoites_Per_Hepatocyte':</span> <span class="pre">15000,</span> <span class="pre">'Merozoites_Per_Schizont':</span> <span class="pre">16,</span> <span class="pre">'Nonspecific_Antigenicity_Factor':</span> <span class="pre">0.415111634,</span> <span class="pre">'Number_Of_Asexual_Cycles_Without_Gametocytes':</span> <span class="pre">1,</span> <span class="pre">'RBC_Destruction_Multiplier':</span> <span class="pre">3.29},</span> <span class="pre">'susceptibility_params':</span> <span class="pre">{'Antibody_CSP_Decay_Days':</span> <span class="pre">90,</span> <span class="pre">'Antibody_Capacity_Growth_Rate':</span> <span class="pre">0.09,</span> <span class="pre">'Antibody_Memory_Level':</span> <span class="pre">0.34,</span> <span class="pre">'Antibody_Stimulation_C50':</span> <span class="pre">30,</span> <span class="pre">'Erythropoiesis_Anemia_Effect':</span> <span class="pre">3.5,</span> <span class="pre">'Fever_IRBC_Kill_Rate':</span> <span class="pre">1.4,</span> <span class="pre">'Maternal_Antibody_Decay_Rate':</span> <span class="pre">0.01,</span> <span class="pre">'Max_MSP1_Antibody_Growthrate':</span> <span class="pre">0.045,</span> <span class="pre">'Min_Adapted_Response':</span> <span class="pre">0.05,</span> <span class="pre">'Nonspecific_Antibody_Growth_Rate_Factor':</span> <span class="pre">0.5,</span> <span class="pre">'Pyrogenic_Threshold':</span> <span class="pre">15000.0}}</span></em><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.params" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.parasite_density">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parasite_density</span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.parasite_density" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.set_params">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.set_params" title="Permalink to this definition"></a></dt>
+<dd><p>Nested update on top of default parameters</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.susceptibility">
@@ -195,6 +217,12 @@
 <dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.update">
 <span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#emodlib.malaria.IntrahostComponent" title="emodlib._emodlib_py.malaria.IntrahostComponent"><span class="pre">emodlib._emodlib_py.malaria.IntrahostComponent</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.update" title="Permalink to this definition"></a></dt>
 <dd><p>Update the intrahost model state by dt</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.malaria.IntrahostComponent.update_params">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#emodlib.malaria.IntrahostComponent.update_params" title="Permalink to this definition"></a></dt>
+<dd><p>Nested update on top of current parameters</p>
 </dd></dl>
 
 </dd></dl>
@@ -255,12 +283,14 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="emodlib.html" class="btn btn-neutral float-left" title="emodlib package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorials.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Edward Wenger.</p>
+    <p>&#169; Copyright 2023, Bill &amp; Melinda Gates Foundation. All rights reserved.
+These docs were built for emodlib version 0.0.2.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

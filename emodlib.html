@@ -4,17 +4,19 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>emodlib package &mdash; emodlib v0.0.2 documentation</title>
+  <title>emodlib package &mdash; emodlib 0.0.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -33,6 +35,9 @@
           <a href="index.html" class="icon icon-home">
             emodlib
           </a>
+              <div class="version">
+                0.0.2
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -49,11 +54,15 @@
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html">emodlib.malaria package</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-emodlib">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-emodlib">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#emodlib.Params"><code class="docutils literal notranslate"><span class="pre">Params</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 </ul>
 
         </div>
@@ -102,16 +111,20 @@
 <li class="toctree-l3"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.__init__"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.challenge"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.challenge()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.configure"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.configure()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.create"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.default_params"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.default_params</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.fever_temperature"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.fever_temperature</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.gametocyte_density"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.gametocyte_density</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.infections"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.infections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.infectiousness"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.infectiousness</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.n_infections"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.n_infections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.params"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.params</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.parasite_density"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.parasite_density</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.set_params"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.set_params()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.susceptibility"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.susceptibility</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.treat"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.treat()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.update"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.update_params"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.update_params()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Susceptibility"><code class="docutils literal notranslate"><span class="pre">Susceptibility</span></code></a><ul>
@@ -135,6 +148,22 @@
 <section id="module-emodlib">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-emodlib" title="Permalink to this heading"></a></h2>
 <p>A collection of algorithms for disease-transmission modeling.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="emodlib.Params">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emodlib.</span></span><span class="sig-name descname"><span class="pre">Params</span></span><a class="reference internal" href="_modules/emodlib/params.html#Params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emodlib.Params" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="emodlib.Params.from_yaml">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emodlib/params.html#Params.from_yaml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emodlib.Params.from_yaml" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="emodlib.Params.yaml">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">yaml</span></span><a class="headerlink" href="#emodlib.Params.yaml" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
@@ -149,7 +178,8 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Edward Wenger.</p>
+    <p>&#169; Copyright 2023, Bill &amp; Melinda Gates Foundation. All rights reserved.
+These docs were built for emodlib version 0.0.2.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T1 - Getting Started &mdash; emodlib 0.0.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="T2 - Infectious Challenge Time Series" href="tut_challenge.html" />
+    <link rel="prev" title="Tutorials" href="../tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            emodlib
+          </a>
+              <div class="version">
+                0.0.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">emodlib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">T1 - Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Defining-simulation-parameters">Defining simulation parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Simulating-an-infection-in-a-naive-host">Simulating an infection in a naive host</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tut_challenge.html">T2 - Infectious Challenge Time Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tut_multihost.html">T3 - Multi-Individual Challenge Time Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tut_optuna.html">T4 - Optimization of Infection Duration</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">emodlib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">T1 - Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorials/tut_intro.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="T1---Getting-Started">
+<h1>T1 - Getting Started<a class="headerlink" href="#T1---Getting-Started" title="Permalink to this heading"></a></h1>
+<p>To install just type <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">emodlib</span></code>. If it worked, you should be able to call <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">emodlib</span></code>.</p>
+<p>In this first tutorial, we’ll introduce the basics of:</p>
+<ul class="simple">
+<li><p>Setting parameters</p></li>
+<li><p>Simulating an infected individual</p></li>
+<li><p>Inspecting individual model state</p></li>
+</ul>
+<section id="Defining-simulation-parameters">
+<h2>Defining simulation parameters<a class="headerlink" href="#Defining-simulation-parameters" title="Permalink to this heading"></a></h2>
+<p>First let’s look at the default malaria intra-host model parameters that are loaded on import…</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">emodlib.malaria</span> <span class="kn">import</span> <span class="n">IntrahostComponent</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">yaml</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Base_Gametocyte_Mosquito_Survival_Rate: 0.002011099
+Cytokine_Gametocyte_Inactivation: 0.01667
+Falciparum_MSP_Variants: 32
+Falciparum_Nonspecific_Types: 76
+Falciparum_PfEMP1_Variants: 1070
+Run_Number: 54321
+Max_Individual_Infections: 5
+infection_params:
+  Antibody_IRBC_Kill_Rate: 1.596
+  Antigen_Switch_Rate: 7.645570124964182e-10
+  Base_Gametocyte_Fraction_Male: 0.2
+  Base_Gametocyte_Production_Rate: 0.06150582
+  Base_Incubation_Period: 7
+  Gametocyte_Stage_Survival_Rate: 0.588569307
+  MSP1_Merozoite_Kill_Fraction: 0.511735322
+  Merozoites_Per_Hepatocyte: 15000
+  Merozoites_Per_Schizont: 16
+  Nonspecific_Antigenicity_Factor: 0.415111634
+  Number_Of_Asexual_Cycles_Without_Gametocytes: 1
+  RBC_Destruction_Multiplier: 3.29
+susceptibility_params:
+  Antibody_CSP_Decay_Days: 90
+  Antibody_Capacity_Growth_Rate: 0.09
+  Antibody_Memory_Level: 0.34
+  Antibody_Stimulation_C50: 30
+  Erythropoiesis_Anemia_Effect: 3.5
+  Fever_IRBC_Kill_Rate: 1.4
+  Maternal_Antibody_Decay_Rate: 0.01
+  Max_MSP1_Antibody_Growthrate: 0.045
+  Min_Adapted_Response: 0.05
+  Nonspecific_Antibody_Growth_Rate_Factor: 0.5
+  Pyrogenic_Threshold: 15000.0
+
+</pre></div></div>
+</div>
+<p>We can layer in modifications to arbitrary parameters (on top of existing defaults) by passing a dictionary to <code class="docutils literal notranslate"><span class="pre">update_params</span></code> function…</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">update_params</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">Run_Number</span><span class="o">=</span><span class="mi">6789</span><span class="p">,</span> <span class="n">susceptibility_params</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">Antibody_CSP_Decay_Days</span><span class="o">=</span><span class="mi">99</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">yaml</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Base_Gametocyte_Mosquito_Survival_Rate: 0.002011099
+Cytokine_Gametocyte_Inactivation: 0.01667
+Falciparum_MSP_Variants: 32
+Falciparum_Nonspecific_Types: 76
+Falciparum_PfEMP1_Variants: 1070
+Run_Number: 6789
+Max_Individual_Infections: 5
+infection_params:
+  Antibody_IRBC_Kill_Rate: 1.596
+  Antigen_Switch_Rate: 7.645570124964182e-10
+  Base_Gametocyte_Fraction_Male: 0.2
+  Base_Gametocyte_Production_Rate: 0.06150582
+  Base_Incubation_Period: 7
+  Gametocyte_Stage_Survival_Rate: 0.588569307
+  MSP1_Merozoite_Kill_Fraction: 0.511735322
+  Merozoites_Per_Hepatocyte: 15000
+  Merozoites_Per_Schizont: 16
+  Nonspecific_Antigenicity_Factor: 0.415111634
+  Number_Of_Asexual_Cycles_Without_Gametocytes: 1
+  RBC_Destruction_Multiplier: 3.29
+susceptibility_params:
+  Antibody_CSP_Decay_Days: 99
+  Antibody_Capacity_Growth_Rate: 0.09
+  Antibody_Memory_Level: 0.34
+  Antibody_Stimulation_C50: 30
+  Erythropoiesis_Anemia_Effect: 3.5
+  Fever_IRBC_Kill_Rate: 1.4
+  Maternal_Antibody_Decay_Rate: 0.01
+  Max_MSP1_Antibody_Growthrate: 0.045
+  Min_Adapted_Response: 0.05
+  Nonspecific_Antibody_Growth_Rate_Factor: 0.5
+  Pyrogenic_Threshold: 15000.0
+
+</pre></div></div>
+</div>
+<p>And we can layer in modified parameters on top of the module defaults, resetting those not explicitly set, with <code class="docutils literal notranslate"><span class="pre">set_params</span></code> function call</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">Run_Number</span><span class="o">=</span><span class="mi">54321</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">yaml</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Base_Gametocyte_Mosquito_Survival_Rate: 0.002011099
+Cytokine_Gametocyte_Inactivation: 0.01667
+Falciparum_MSP_Variants: 32
+Falciparum_Nonspecific_Types: 76
+Falciparum_PfEMP1_Variants: 1070
+Run_Number: 54321
+Max_Individual_Infections: 5
+infection_params:
+  Antibody_IRBC_Kill_Rate: 1.596
+  Antigen_Switch_Rate: 7.645570124964182e-10
+  Base_Gametocyte_Fraction_Male: 0.2
+  Base_Gametocyte_Production_Rate: 0.06150582
+  Base_Incubation_Period: 7
+  Gametocyte_Stage_Survival_Rate: 0.588569307
+  MSP1_Merozoite_Kill_Fraction: 0.511735322
+  Merozoites_Per_Hepatocyte: 15000
+  Merozoites_Per_Schizont: 16
+  Nonspecific_Antigenicity_Factor: 0.415111634
+  Number_Of_Asexual_Cycles_Without_Gametocytes: 1
+  RBC_Destruction_Multiplier: 3.29
+susceptibility_params:
+  Antibody_CSP_Decay_Days: 90
+  Antibody_Capacity_Growth_Rate: 0.09
+  Antibody_Memory_Level: 0.34
+  Antibody_Stimulation_C50: 30
+  Erythropoiesis_Anemia_Effect: 3.5
+  Fever_IRBC_Kill_Rate: 1.4
+  Maternal_Antibody_Decay_Rate: 0.01
+  Max_MSP1_Antibody_Growthrate: 0.045
+  Min_Adapted_Response: 0.05
+  Nonspecific_Antibody_Growth_Rate_Factor: 0.5
+  Pyrogenic_Threshold: 15000.0
+
+</pre></div></div>
+</div>
+</section>
+<section id="Simulating-an-infection-in-a-naive-host">
+<h2>Simulating an infection in a naive host<a class="headerlink" href="#Simulating-an-infection-in-a-naive-host" title="Permalink to this heading"></a></h2>
+<p>Now let’s import the python bindings for the <code class="docutils literal notranslate"><span class="pre">emodlib.malaria</span></code> library and create a naive host…</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">emodlib.malaria</span> <span class="kn">import</span> <span class="n">IntrahostComponent</span>
+
+<span class="n">ic</span> <span class="o">=</span> <span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Let’s subject our naive host to an infectious challenge…</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ic</span><span class="o">.</span><span class="n">challenge</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Now let’s define a little helper function to print a descriptive line for the model state…</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Helper function to print a description of the intra-host model state &quot;&quot;&quot;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;t=</span><span class="si">%d</span><span class="s1">: &#39;</span> <span class="o">%</span> <span class="n">t</span> <span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;(asexual, mature gametocyte, fever, infectiousness) = (</span><span class="si">%0.2f</span><span class="s1">, </span><span class="si">%0.3f</span><span class="s1">, </span><span class="si">%0.1f</span><span class="s1"> </span><span class="si">%0.2f</span><span class="s1">)&#39;</span> <span class="o">%</span> \
+        <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">parasite_density</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">gametocyte_density</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">fever_temperature</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">infectiousness</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Let’s do enough timestep updates to see the emergence of asexual-stage parasites from the liver, the onset of fever with high parasite density, and the progression of differentiated gametocytes to mature gametocytes…</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">ic</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">describe</span><span class="p">(</span><span class="n">ic</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+t=0: (asexual, mature gametocyte, fever, infectiousness) = (0.00, 0.000, 37.0 0.00)
+t=1: (asexual, mature gametocyte, fever, infectiousness) = (0.00, 0.000, 37.0 0.00)
+t=2: (asexual, mature gametocyte, fever, infectiousness) = (0.00, 0.000, 37.0 0.00)
+t=3: (asexual, mature gametocyte, fever, infectiousness) = (0.00, 0.000, 37.0 0.00)
+t=4: (asexual, mature gametocyte, fever, infectiousness) = (0.00, 0.000, 37.0 0.00)
+t=5: (asexual, mature gametocyte, fever, infectiousness) = (0.00, 0.000, 37.0 0.00)
+t=6: (asexual, mature gametocyte, fever, infectiousness) = (0.00, 0.000, 37.0 0.00)
+t=7: (asexual, mature gametocyte, fever, infectiousness) = (0.00, 0.000, 37.0 0.00)
+t=8: (asexual, mature gametocyte, fever, infectiousness) = (0.05, 0.000, 37.0 0.00)
+t=9: (asexual, mature gametocyte, fever, infectiousness) = (0.05, 0.000, 37.0 0.00)
+t=10: (asexual, mature gametocyte, fever, infectiousness) = (0.71, 0.000, 37.0 0.00)
+t=11: (asexual, mature gametocyte, fever, infectiousness) = (0.71, 0.000, 37.0 0.00)
+t=12: (asexual, mature gametocyte, fever, infectiousness) = (10.61, 0.000, 37.0 0.00)
+t=13: (asexual, mature gametocyte, fever, infectiousness) = (10.61, 0.000, 37.0 0.00)
+t=14: (asexual, mature gametocyte, fever, infectiousness) = (158.18, 0.000, 37.0 0.00)
+t=15: (asexual, mature gametocyte, fever, infectiousness) = (158.18, 0.000, 37.1 0.00)
+t=16: (asexual, mature gametocyte, fever, infectiousness) = (2359.20, 0.000, 37.1 0.00)
+t=17: (asexual, mature gametocyte, fever, infectiousness) = (2359.20, 0.000, 38.1 0.00)
+t=18: (asexual, mature gametocyte, fever, infectiousness) = (35184.98, 0.000, 38.1 0.00)
+t=19: (asexual, mature gametocyte, fever, infectiousness) = (6473.13, 0.000, 43.2 0.00)
+t=20: (asexual, mature gametocyte, fever, infectiousness) = (17369.77, 0.002, 41.9 0.00)
+t=21: (asexual, mature gametocyte, fever, infectiousness) = (2538.02, 0.002, 44.6 0.00)
+t=22: (asexual, mature gametocyte, fever, infectiousness) = (12189.47, 0.031, 37.0 0.00)
+t=23: (asexual, mature gametocyte, fever, infectiousness) = (2932.88, 0.023, 37.6 0.00)
+t=24: (asexual, mature gametocyte, fever, infectiousness) = (9026.20, 0.462, 37.0 0.00)
+t=25: (asexual, mature gametocyte, fever, infectiousness) = (1683.18, 0.350, 37.7 0.00)
+t=26: (asexual, mature gametocyte, fever, infectiousness) = (4068.65, 6.887, 37.0 0.03)
+t=27: (asexual, mature gametocyte, fever, infectiousness) = (574.03, 5.221, 37.4 0.00)
+t=28: (asexual, mature gametocyte, fever, infectiousness) = (1090.37, 102.722, 37.0 0.34)
+t=29: (asexual, mature gametocyte, fever, infectiousness) = (131.97, 77.868, 37.1 0.09)
+</pre></div></div>
+</div>
+<p>And finally treat the individual and see their infections are now gone…</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ic</span><span class="o">.</span><span class="n">treat</span><span class="p">()</span>
+<span class="n">describe</span><span class="p">(</span><span class="n">ic</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(asexual, mature gametocyte, fever, infectiousness) = (0.00, 0.000, 37.1 0.00)
+</pre></div></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../tutorials.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tut_challenge.html" class="btn btn-neutral float-right" title="T2 - Infectious Challenge Time Series" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Bill &amp; Melinda Gates Foundation. All rights reserved.
+These docs were built for emodlib version 0.0.2.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
