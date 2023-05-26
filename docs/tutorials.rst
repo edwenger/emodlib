@@ -4,3 +4,4 @@
     :maxdepth: 1
 
     tutorials/tut_intro.ipynb
+    tutorials/tut_challenge.ipynb
