@@ -16,5 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated package classifiers to support Python 3.9-3.13
 - Updated artifact upload/download actions from v3 to v4
 - Updated cibuildwheel to v2.21.3 for improved Windows build support
+- Updated pypa/gh-action-pypi-publish from v1.6.4 to v1.13.0
 
 ## [0.0.3] - Previous release
