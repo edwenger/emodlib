@@ -11,7 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Python 3.12 support and compatibility
 
 ### Changed
-- Updated CI/CD workflows to build and test with Python 3.12
-- Updated package classifiers to include Python 3.12
+- Updated minimum Python version from 3.7 to 3.9 (Python 3.7 and 3.8 are EOL)
+- Updated CI/CD workflows to build and test with Python 3.9, 3.11, and 3.12
+- Updated package classifiers to support Python 3.9-3.12
+- Updated artifact upload/download actions from v3 to v4
 
 ## [0.0.3] - Previous release
