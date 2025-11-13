@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>T1 - Getting Started &mdash; emodlib 0.0.3 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>T1 - Getting Started &mdash; emodlib 0.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8c5712d9"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -38,9 +38,6 @@
           <a href="../index.html" class="icon icon-home">
             emodlib
           </a>
-              <div class="version">
-                0.0.3
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -91,7 +88,7 @@
            <div itemprop="articleBody">
              
   <section id="T1---Getting-Started">
-<h1>T1 - Getting Started<a class="headerlink" href="#T1---Getting-Started" title="Permalink to this heading"></a></h1>
+<h1>T1 - Getting Started<a class="headerlink" href="#T1---Getting-Started" title="Link to this heading"></a></h1>
 <p>To install just type <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">emodlib</span></code>. If it worked, you should be able to call <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">emodlib</span></code>.</p>
 <p>In this first tutorial, we’ll introduce the basics of:</p>
 <ul class="simple">
@@ -100,13 +97,13 @@
 <li><p>Inspecting individual model state</p></li>
 </ul>
 <section id="Defining-simulation-parameters">
-<h2>Defining simulation parameters<a class="headerlink" href="#Defining-simulation-parameters" title="Permalink to this heading"></a></h2>
+<h2>Defining simulation parameters<a class="headerlink" href="#Defining-simulation-parameters" title="Link to this heading"></a></h2>
 <p>First let’s look at the default malaria intra-host model parameters that are loaded on import…</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">emodlib.malaria</span> <span class="kn">import</span> <span class="n">IntrahostComponent</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">emodlib.malaria</span><span class="w"> </span><span class="kn">import</span> <span class="n">IntrahostComponent</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">yaml</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -253,13 +250,13 @@ susceptibility_params:
 </div>
 </section>
 <section id="Simulating-an-infection-in-a-naive-host">
-<h2>Simulating an infection in a naive host<a class="headerlink" href="#Simulating-an-infection-in-a-naive-host" title="Permalink to this heading"></a></h2>
+<h2>Simulating an infection in a naive host<a class="headerlink" href="#Simulating-an-infection-in-a-naive-host" title="Link to this heading"></a></h2>
 <p>Now let’s import the python bindings for the <code class="docutils literal notranslate"><span class="pre">emodlib.malaria</span></code> library and create a naive host…</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">emodlib.malaria</span> <span class="kn">import</span> <span class="n">IntrahostComponent</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">emodlib.malaria</span><span class="w"> </span><span class="kn">import</span> <span class="n">IntrahostComponent</span>
 
 <span class="n">ic</span> <span class="o">=</span> <span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 </pre></div>
@@ -279,7 +276,7 @@ susceptibility_params:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">describe</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Helper function to print a description of the intra-host model state &quot;&quot;&quot;</span>
     <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;t=</span><span class="si">%d</span><span class="s1">: &#39;</span> <span class="o">%</span> <span class="n">t</span> <span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;(asexual, mature gametocyte, fever, infectiousness) = (</span><span class="si">%0.2f</span><span class="s1">, </span><span class="si">%0.3f</span><span class="s1">, </span><span class="si">%0.1f</span><span class="s1"> </span><span class="si">%0.2f</span><span class="s1">)&#39;</span> <span class="o">%</span> \
@@ -368,8 +365,8 @@ t=29: (asexual, mature gametocyte, fever, infectiousness) = (131.97, 77.868, 37.
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Bill &amp; Melinda Gates Foundation. All rights reserved.
-These docs were built for emodlib version 0.0.3.</p>
+    <p>&#169; Copyright 2025, Bill &amp; Melinda Gates Foundation. All rights reserved.
+These docs were built for emodlib version 0.0.4.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
