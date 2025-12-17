@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>T4 - Optimization of Infection Duration &mdash; emodlib 0.0.4 documentation</title>
+  <title>T4 - Optimization of Infection Duration &mdash; emodlib 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -14,7 +14,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=8c5712d9"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
       <script src="../_static/doctools.js?v=9a2dae69"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -87,7 +87,7 @@
 <p>In this tutorial, we’ll introduce the concept of parameter optimization against an optimization function – in this case, maximizing the mean infection duration in naive infectious challenges by changing the antigenic switching rate parameter.</p>
 <p>We’ll start by defining a function to perform multi-individual challenges (similar to the last tutorial)</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -95,14 +95,14 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">emodlib.malaria</span><span class="w"> </span><span class="kn">import</span> <span class="n">IntrahostComponent</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">emodlib.malaria</span><span class="w"> </span><span class="kn">import</span> <span class="n">IntrahostComponent</span><span class="p">,</span> <span class="n">create_config</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">multiple_challenges</span><span class="p">(</span><span class="n">n_people</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">multiple_challenges</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">n_people</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
 
     <span class="n">asexuals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_people</span><span class="p">,</span> <span class="n">duration</span><span class="p">))</span>
     <span class="n">gametocytes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_people</span><span class="p">,</span> <span class="n">duration</span><span class="p">))</span>
-    <span class="n">pp</span> <span class="o">=</span> <span class="p">[</span><span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">create</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_people</span><span class="p">)]</span>
+    <span class="n">pp</span> <span class="o">=</span> <span class="p">[</span><span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_people</span><span class="p">)]</span>
     <span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">challenge</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pp</span><span class="p">]</span>
 
     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">duration</span><span class="p">):</span>
@@ -135,12 +135,12 @@
 <p>Then we’ll define our objective function:</p>
 <ul class="simple">
 <li><p>log-uniform sampling of the antigen switching rate within a defined range</p></li>
-<li><p>setting the model parameters</p></li>
+<li><p>creating a model config with that parameter value</p></li>
 <li><p>running the multi-individual challenge time-series</p></li>
 <li><p>returning the mean infection-duration value</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">objective</span><span class="p">(</span><span class="n">trial</span><span class="p">):</span>
@@ -149,9 +149,9 @@
     <span class="n">duration</span> <span class="o">=</span> <span class="mi">500</span>
 
     <span class="n">antigen_switch_rate</span> <span class="o">=</span> <span class="n">trial</span><span class="o">.</span><span class="n">suggest_float</span><span class="p">(</span><span class="s2">&quot;Antigen_Switch_Rate&quot;</span><span class="p">,</span> <span class="mf">5e-10</span><span class="p">,</span> <span class="mf">5e-8</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">infection_params</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">Antigen_Switch_Rate</span><span class="o">=</span><span class="n">antigen_switch_rate</span><span class="p">)))</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">create_config</span><span class="p">({</span><span class="s1">&#39;infection_params&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Antigen_Switch_Rate&#39;</span><span class="p">:</span> <span class="n">antigen_switch_rate</span><span class="p">}})</span>
 
-    <span class="n">da</span> <span class="o">=</span> <span class="n">multiple_challenges</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">,</span> <span class="n">n_people</span><span class="o">=</span><span class="n">n_people</span><span class="p">)</span>
+    <span class="n">da</span> <span class="o">=</span> <span class="n">multiple_challenges</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">,</span> <span class="n">n_people</span><span class="o">=</span><span class="n">n_people</span><span class="p">)</span>
     <span class="n">infection_durations</span> <span class="o">=</span> <span class="n">get_last_nonzero_by_row</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="s1">&#39;parasite_density&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">infection_durations</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -387,7 +387,7 @@ if (outputEl) {{
 
   <div role="contentinfo">
     <p>&#169; Copyright 2025, Bill &amp; Melinda Gates Foundation. All rights reserved.
-These docs were built for emodlib version 0.0.4.</p>
+These docs were built for emodlib version 0.1.0.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

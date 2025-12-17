@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>emodlib package &mdash; emodlib 0.0.4 documentation</title>
+  <title>emodlib package &mdash; emodlib 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=8c5712d9"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
       <script src="_static/doctools.js?v=9a2dae69"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -97,7 +97,6 @@
 <li class="toctree-l2"><a class="reference internal" href="emodlib.malaria.html#module-emodlib.malaria">Module contents</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Infection"><code class="docutils literal notranslate"><span class="pre">Infection</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Infection.__init__"><code class="docutils literal notranslate"><span class="pre">Infection.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Infection.configure"><code class="docutils literal notranslate"><span class="pre">Infection.configure()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Infection.create"><code class="docutils literal notranslate"><span class="pre">Infection.create()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Infection.msp_antibody"><code class="docutils literal notranslate"><span class="pre">Infection.msp_antibody</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Infection.msp_type"><code class="docutils literal notranslate"><span class="pre">Infection.msp_type</span></code></a></li>
@@ -115,19 +114,54 @@
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.infections"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.infections</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.infectiousness"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.infectiousness</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.n_infections"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.n_infections</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.params"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.params</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.parasite_density"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.parasite_density</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.set_params"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.set_params()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.susceptibility"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.susceptibility</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.treat"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.treat()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.update"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.update()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.IntrahostComponent.update_params"><code class="docutils literal notranslate"><span class="pre">IntrahostComponent.update_params()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig"><code class="docutils literal notranslate"><span class="pre">MalariaConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.MSP1_antibody_growthrate"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.MSP1_antibody_growthrate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.MSP1_merozoite_kill"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.MSP1_merozoite_kill</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.RBC_destruction_multiplier"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.RBC_destruction_multiplier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.__init__"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.antibody_IRBC_killrate"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.antibody_IRBC_killrate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.antibody_capacity_growthrate"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.antibody_capacity_growthrate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.antibody_csp_decay_days"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.antibody_csp_decay_days</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.antibody_stimulation_c50"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.antibody_stimulation_c50</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.antigen_switch_rate"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.antigen_switch_rate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.base_gametocyte_mosquito_survival"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.base_gametocyte_mosquito_survival</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.base_gametocyte_production"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.base_gametocyte_production</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.base_gametocyte_sexratio"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.base_gametocyte_sexratio</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.configure"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.configure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.cytokine_gametocyte_inactivation"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.cytokine_gametocyte_inactivation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.erythropoiesis_anemia_effect"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.erythropoiesis_anemia_effect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.falciparum_MSP_variants"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.falciparum_MSP_variants</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.falciparum_PfEMP1_variants"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.falciparum_PfEMP1_variants</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.falciparum_nonspecific_types"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.falciparum_nonspecific_types</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.fever_IRBC_killrate"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.fever_IRBC_killrate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.from_params"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.from_params()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.gametocyte_stage_survival"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.gametocyte_stage_survival</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.hyperimmune_decay_rate"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.hyperimmune_decay_rate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.incubation_period"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.incubation_period</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.maternal_antibody_decay_rate"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.maternal_antibody_decay_rate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.max_ind_inf"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.max_ind_inf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.memory_level"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.memory_level</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.merozoites_per_hepatocyte"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.merozoites_per_hepatocyte</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.merozoites_per_schizont"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.merozoites_per_schizont</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.minimum_adapted_response"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.minimum_adapted_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.n_asexual_cycles_wo_gametocytes"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.n_asexual_cycles_wo_gametocytes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.non_specific_antigenicity"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.non_specific_antigenicity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.non_specific_growth"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.non_specific_growth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.pyrogenic_threshold"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.pyrogenic_threshold</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.random_seed"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.random_seed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.update"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.MalariaConfig.yaml"><code class="docutils literal notranslate"><span class="pre">MalariaConfig.yaml</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Susceptibility"><code class="docutils literal notranslate"><span class="pre">Susceptibility</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Susceptibility.__init__"><code class="docutils literal notranslate"><span class="pre">Susceptibility.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Susceptibility.age"><code class="docutils literal notranslate"><span class="pre">Susceptibility.age</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Susceptibility.configure"><code class="docutils literal notranslate"><span class="pre">Susceptibility.configure()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Susceptibility.create"><code class="docutils literal notranslate"><span class="pre">Susceptibility.create()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Susceptibility.fever_kill_rate"><code class="docutils literal notranslate"><span class="pre">Susceptibility.fever_kill_rate</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Susceptibility.maternal_antibody_strength"><code class="docutils literal notranslate"><span class="pre">Susceptibility.maternal_antibody_strength</span></code></a></li>
@@ -135,6 +169,7 @@
 <li class="toctree-l4"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.Susceptibility.update"><code class="docutils literal notranslate"><span class="pre">Susceptibility.update()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="emodlib.malaria.html#emodlib.malaria.create_config"><code class="docutils literal notranslate"><span class="pre">create_config()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -176,7 +211,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2025, Bill &amp; Melinda Gates Foundation. All rights reserved.
-These docs were built for emodlib version 0.0.4.</p>
+These docs were built for emodlib version 0.1.0.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

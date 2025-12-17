@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>T3 - Multi-Individual Challenge Time Series &mdash; emodlib 0.0.4 documentation</title>
+  <title>T3 - Multi-Individual Challenge Time Series &mdash; emodlib 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -14,7 +14,7 @@
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=8c5712d9"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
       <script src="../_static/doctools.js?v=9a2dae69"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -86,7 +86,7 @@
   <section id="T3---Multi-Individual-Challenge-Time-Series">
 <h1>T3 - Multi-Individual Challenge Time Series<a class="headerlink" href="#T3---Multi-Individual-Challenge-Time-Series" title="Link to this heading"></a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -94,12 +94,12 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">emodlib.malaria</span><span class="w"> </span><span class="kn">import</span> <span class="n">IntrahostComponent</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">emodlib.malaria</span><span class="w"> </span><span class="kn">import</span> <span class="n">IntrahostComponent</span><span class="p">,</span> <span class="n">create_config</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">duration</span> <span class="o">=</span> <span class="mi">350</span>
@@ -108,7 +108,8 @@
 <span class="n">asexuals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_people</span><span class="p">,</span> <span class="n">duration</span><span class="p">))</span>
 <span class="n">gametocytes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_people</span><span class="p">,</span> <span class="n">duration</span><span class="p">))</span>
 
-<span class="n">pp</span> <span class="o">=</span> <span class="p">[</span><span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">create</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_people</span><span class="p">)]</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">create_config</span><span class="p">()</span>
+<span class="n">pp</span> <span class="o">=</span> <span class="p">[</span><span class="n">IntrahostComponent</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_people</span><span class="p">)]</span>
 <span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">challenge</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pp</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">duration</span><span class="p">):</span>
@@ -658,7 +659,7 @@ Coordinates:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2025, Bill &amp; Melinda Gates Foundation. All rights reserved.
-These docs were built for emodlib version 0.0.4.</p>
+These docs were built for emodlib version 0.1.0.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
